@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code, Palette, BarChart, Globe, Server, Smartphone, PenTool, Lock, Plus } from 'lucide-react';
+import { Code, Palette, BarChart, Globe, Server, Smartphone, PenTool, Lock, Plus, Check, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -112,9 +112,7 @@ const Services: React.FC = () => {
                     className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
                   >
                     <span className="sr-only">Close</span>
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <X className="h-6 w-6" />
                   </button>
                 </div>
                 
@@ -155,21 +153,5 @@ const Services: React.FC = () => {
     </section>
   );
 };
-
-// Adding the Check icon component since it was missing in the imports
-const Check: React.FC<{ className?: string }> = ({ className }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <polyline points="20 6 9 17 4 12"></polyline>
-  </svg>
-);
 
 export default Services;

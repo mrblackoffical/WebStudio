@@ -3,102 +3,6 @@ import { Globe, Check, ChevronDown } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
-interface Language {
-  code: string;
-  name: string;
-  nativeName: string;
-  flag: string;
-  content: {
-    header: {
-      logo: string;
-      nav: {
-        home: string;
-        services: string;
-        process: string;
-        portfolio: string;
-        testimonials: string;
-        contact: string;
-      };
-      cta: string;
-    };
-    hero: {
-      title: string;
-      subtitle: string;
-      cta: {
-        primary: string;
-        secondary: string;
-      };
-    };
-    services: {
-      title: string;
-      subtitle: string;
-      items: Array<{
-        title: string;
-        description: string;
-        features: string[];
-      }>;
-    };
-    process: {
-      title: string;
-      subtitle: string;
-      steps: Array<{
-        title: string;
-        description: string;
-      }>;
-    };
-    portfolio: {
-      title: string;
-      subtitle: string;
-      categories: {
-        all: string;
-        ecommerce: string;
-        business: string;
-        realEstate: string;
-        healthcare: string;
-        mobile: string;
-        education: string;
-      };
-      projects: Array<{
-        title: string;
-        description: string;
-        longDescription: string;
-        features: string[];
-      }>;
-    };
-    testimonials: {
-      title: string;
-      subtitle: string;
-      items: Array<{
-        content: string;
-        name: string;
-        role: string;
-        company: string;
-      }>;
-    };
-    contact: {
-      title: string;
-      subtitle: string;
-      info: {
-        phone: string;
-        email: string;
-        address: string;
-      };
-      form: {
-        name: string;
-        email: string;
-        phone: string;
-        subject: string;
-        message: string;
-        submit: string;
-        success: string;
-      };
-      social: {
-        follow: string;
-      };
-    };
-  };
-}
-
 const LanguageSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, languages } = useLanguage();
@@ -107,7 +11,7 @@ const LanguageSelector: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLanguageSelect = (selectedLanguage: Language) => {
+  const handleLanguageSelect = (selectedLanguage: any) => {
     setLanguage(selectedLanguage);
     setIsOpen(false);
   };

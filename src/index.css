@@ -42,8 +42,9 @@
 
   /* Armenian text improvements */
   [lang="hy"], .armenian-text {
-    letter-spacing: 0.025em;
-    word-spacing: 0.1em;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+    line-height: 1.7;
   }
 }
 
@@ -106,8 +107,14 @@
 
   /* Armenian text specific styles */
   .armenian-nav {
-    @apply tracking-wide;
+    @apply tracking-wider;
     font-feature-settings: "kern" 1, "liga" 1;
+    word-spacing: 0.2em;
+  }
+
+  /* WebStudio logo spacing */
+  .logo-spacing {
+    letter-spacing: 0.1em;
   }
 }
 
@@ -127,5 +134,20 @@ body {
 @supports (font-feature-settings: "kern") {
   [lang="hy"] {
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    letter-spacing: 0.06em;
+    word-spacing: 0.18em;
   }
+}
+
+/* Enhanced spacing for Armenian sections */
+[lang="hy"] h1, [lang="hy"] h2, [lang="hy"] h3, [lang="hy"] h4, [lang="hy"] h5, [lang="hy"] h6 {
+  letter-spacing: 0.04em;
+  word-spacing: 0.12em;
+  line-height: 1.6;
+}
+
+[lang="hy"] p, [lang="hy"] span, [lang="hy"] div {
+  letter-spacing: 0.03em;
+  word-spacing: 0.1em;
+  line-height: 1.7;
 }

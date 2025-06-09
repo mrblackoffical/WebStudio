@@ -47,10 +47,10 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="flex items-center gap-3">
+            <a href="#" className="flex items-center gap-4">
               <BarChart3 className="h-8 w-8 text-primary-600 dark:text-primary-500" />
               <span className={`text-lg md:text-xl font-bold text-gray-900 dark:text-white ${
-                isArmenian ? 'tracking-wide' : ''
+                isArmenian ? 'tracking-wider text-base md:text-lg' : ''
               }`}>
                 {language.content.header.logo}
               </span>
@@ -58,13 +58,13 @@ const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-8 xl:space-x-10 items-center">
+          <nav className="hidden lg:flex space-x-10 xl:space-x-12 items-center">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 className={`text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-200 whitespace-nowrap ${
-                  isArmenian ? 'tracking-wide text-sm xl:text-base' : ''
+                  isArmenian ? 'tracking-wider text-sm xl:text-base px-1' : ''
                 }`}
               >
                 {item.name}
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
             <a 
               href="#contact" 
               className={`btn btn-primary whitespace-nowrap ${
-                isArmenian ? 'text-sm px-4 py-2' : ''
+                isArmenian ? 'text-sm px-6 py-3 tracking-wide' : ''
               }`}
             >
               {language.content.header.cta}
@@ -121,8 +121,8 @@ const Header: React.FC = () => {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block py-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-200 ${
-                    isArmenian ? 'tracking-wide' : ''
+                  className={`block py-4 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-200 ${
+                    isArmenian ? 'tracking-wider text-sm px-2' : ''
                   }`}
                 >
                   {item.name}
@@ -135,7 +135,7 @@ const Header: React.FC = () => {
                     href="#contact" 
                     onClick={() => setIsMenuOpen(false)}
                     className={`btn btn-primary ${
-                      isArmenian ? 'text-sm px-4 py-2' : ''
+                      isArmenian ? 'text-sm px-6 py-3 tracking-wide' : ''
                     }`}
                   >
                     {language.content.header.cta}

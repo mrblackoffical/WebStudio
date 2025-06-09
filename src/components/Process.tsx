@@ -12,13 +12,16 @@ const Process: React.FC = () => {
   const { language } = useLanguage();
 
   const processIcons = [
-    <MessageSquare className="h-6 w-6 text-primary-600 dark:text-primary-500" />,
-    <Workflow className="h-6 w-6 text-primary-600 dark:text-primary-500" />,
-    <PenSquare className="h-6 w-6 text-primary-600 dark:text-primary-500" />,
-    <FileCode2 className="h-6 w-6 text-primary-600 dark:text-primary-500" />,
-    <ListChecks className="h-6 w-6 text-primary-600 dark:text-primary-500" />,
-    <Rocket className="h-6 w-6 text-primary-600 dark:text-primary-500" />
+    <MessageSquare className="h-8 w-8 text-white" />,
+    <Workflow className="h-8 w-8 text-white" />,
+    <PenSquare className="h-8 w-8 text-white" />,
+    <FileCode2 className="h-8 w-8 text-white" />,
+    <ListChecks className="h-8 w-8 text-white" />,
+    <Rocket className="h-8 w-8 text-white" />
   ];
+
+  // Check if current language is Armenian
+  const isArmenian = language.code === 'hy';
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,7 +43,7 @@ const Process: React.FC = () => {
       <div className="container">
         <div className="section-title-container">
           <motion.h2 
-            className="section-title"
+            className={`section-title ${isArmenian ? 'tracking-wide' : ''}`}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
@@ -48,7 +51,7 @@ const Process: React.FC = () => {
             {language.content.process.title}
           </motion.h2>
           <motion.p 
-            className="section-subtitle"
+            className={`section-subtitle ${isArmenian ? 'tracking-wide leading-relaxed' : ''}`}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -71,14 +74,22 @@ const Process: React.FC = () => {
               className="relative"
             >
               <div className="card p-6 h-full flex flex-col">
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary-600 dark:bg-primary-700 flex items-center justify-center text-white font-bold shadow-lg">
-                  {index + 1}
-                </div>
-                <div className="mt-6 mb-4">
+                <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 dark:from-primary-700 dark:to-primary-800 flex items-center justify-center shadow-lg">
                   {processIcons[index]}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{step.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+                <div className="mt-8 mb-4">
+                  <div className="w-12 h-1 bg-primary-600 dark:bg-primary-500 rounded-full"></div>
+                </div>
+                <h3 className={`text-xl font-semibold text-gray-900 dark:text-white mb-3 ${
+                  isArmenian ? 'tracking-wide leading-relaxed' : ''
+                }`}>
+                  {step.title}
+                </h3>
+                <p className={`text-gray-600 dark:text-gray-300 ${
+                  isArmenian ? 'tracking-wide leading-relaxed text-sm' : ''
+                }`}>
+                  {step.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -92,7 +103,7 @@ const Process: React.FC = () => {
         >
           <a 
             href="#contact" 
-            className="btn btn-primary"
+            className={`btn btn-primary ${isArmenian ? 'tracking-wide' : ''}`}
           >
             Start Your Project
           </a>

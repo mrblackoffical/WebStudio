@@ -39,6 +39,12 @@
   :focus-visible {
     @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
   }
+
+  /* Armenian text improvements */
+  [lang="hy"], .armenian-text {
+    letter-spacing: 0.025em;
+    word-spacing: 0.1em;
+  }
 }
 
 @layer components {
@@ -97,6 +103,12 @@
   .label {
     @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
   }
+
+  /* Armenian text specific styles */
+  .armenian-nav {
+    @apply tracking-wide;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
 }
 
 /* Dark mode styles */
@@ -109,4 +121,11 @@
 body {
   --toast-bg: #ffffff;
   --toast-color: #111827;
+}
+
+/* Improved Armenian font rendering */
+@supports (font-feature-settings: "kern") {
+  [lang="hy"] {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
 }

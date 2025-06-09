@@ -32,6 +32,9 @@ const Header: React.FC = () => {
     { name: language.content.header.nav.contact, href: '#contact' },
   ];
 
+  // Check if current language is Armenian to apply special spacing
+  const isArmenian = language.code === 'hy';
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -44,21 +47,25 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="flex items-center gap-2">
+            <a href="#" className="flex items-center gap-3">
               <BarChart3 className="h-8 w-8 text-primary-600 dark:text-primary-500" />
-              <span className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+              <span className={`text-lg md:text-xl font-bold text-gray-900 dark:text-white ${
+                isArmenian ? 'tracking-wide' : ''
+              }`}>
                 {language.content.header.logo}
               </span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6 lg:space-x-8 items-center">
+          <nav className="hidden lg:flex space-x-8 xl:space-x-10 items-center">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-200"
+                className={`text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-200 whitespace-nowrap ${
+                  isArmenian ? 'tracking-wide text-sm xl:text-base' : ''
+                }`}
               >
                 {item.name}
               </a>
@@ -66,20 +73,22 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Theme toggle & Language selector */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
             <div className="h-6 w-px bg-gray-300 dark:bg-gray-700" />
             <LanguageSelector />
             <a 
               href="#contact" 
-              className="btn btn-primary whitespace-nowrap"
+              className={`btn btn-primary whitespace-nowrap ${
+                isArmenian ? 'text-sm px-4 py-2' : ''
+              }`}
             >
               {language.content.header.cta}
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center space-x-4">
+          <div className="flex lg:hidden items-center space-x-4">
             <ThemeToggle />
             <button
               onClick={toggleMenu}
@@ -104,7 +113,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white dark:bg-gray-900 shadow-lg"
+            className="lg:hidden bg-white dark:bg-gray-900 shadow-lg"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navItems.map((item) => (
@@ -112,7 +121,9 @@ const Header: React.FC = () => {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-200"
+                  className={`block py-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-200 ${
+                    isArmenian ? 'tracking-wide' : ''
+                  }`}
                 >
                   {item.name}
                 </a>
@@ -123,7 +134,9 @@ const Header: React.FC = () => {
                   <a 
                     href="#contact" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="btn btn-primary"
+                    className={`btn btn-primary ${
+                      isArmenian ? 'text-sm px-4 py-2' : ''
+                    }`}
                   >
                     {language.content.header.cta}
                   </a>

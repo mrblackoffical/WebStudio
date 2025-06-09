@@ -29,15 +29,7 @@ const Footer: React.FC = () => {
         { name: 'SEO', href: '#services' },
       ],
     },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Blog', href: '#' },
-        { name: 'Case Studies', href: '#' },
-        { name: 'Portfolio', href: '#portfolio' },
-        { name: 'FAQ', href: '#' },
-      ],
-    },
+    
     {
       title: 'Legal',
       links: [

@@ -20,7 +20,6 @@ const Footer: React.FC = () => {
         { name: 'Contact', href: '#contact' },
       ],
     },
-
     {
       title: 'Services',
       links: [
@@ -29,7 +28,17 @@ const Footer: React.FC = () => {
         { name: 'E-commerce', href: '#services' },
         { name: 'SEO', href: '#services' },
       ],
-    },    {
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Blog', href: '#' },
+        { name: 'Case Studies', href: '#' },
+        { name: 'Portfolio', href: '#portfolio' },
+        { name: 'FAQ', href: '#' },
+      ],
+    },
+    {
       title: 'Legal',
       links: [
         { name: 'Privacy Policy', href: '#' },

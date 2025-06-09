@@ -107,7 +107,7 @@ export const languages: Language[] = [
     flag: '🇺🇸',
     content: {
       header: {
-        logo: 'WebStudio',
+        logo: 'CoolServices',
         nav: {
           home: 'Home',
           services: 'Services',
@@ -297,7 +297,7 @@ export const languages: Language[] = [
         subtitle: 'Have a project in mind? Let\'s discuss how we can help',
         info: {
           phone: '(123) 456-7890',
-          email: 'contact@webstudio.com',
+          email: 'contact@coolservices.com',
           address: '123 Web Street, San Francisco, CA 94103'
         },
         form: {
@@ -322,7 +322,7 @@ export const languages: Language[] = [
     flag: '🇷🇺',
     content: {
       header: {
-        logo: 'WebStudio',
+        logo: 'CoolServices',
         nav: {
           home: 'Главная',
           services: 'Услуги',
@@ -500,7 +500,7 @@ export const languages: Language[] = [
         subtitle: 'Есть проект? Давайте обсудим, как мы можем помочь',
         info: {
           phone: '(123) 456-7890',
-          email: 'contact@webstudio.com',
+          email: 'contact@coolservices.com',
           address: '123 Web Street, Сан-Франциско, CA 94103'
         },
         form: {
@@ -525,7 +525,7 @@ export const languages: Language[] = [
     flag: '🇦🇲',
     content: {
       header: {
-        logo: 'WebStudio',
+        logo: 'CoolServices',
         nav: {
           home: 'Գլխավոր',
           services: 'Ծառայություններ',
@@ -703,7 +703,7 @@ export const languages: Language[] = [
         subtitle: 'Ունե՞ք նախագիծ մտքում: Եկեք քննարկենք, թե ինչպես կարող ենք օգնել',
         info: {
           phone: '(123) 456-7890',
-          email: 'contact@webstudio.com',
+          email: 'contact@coolservices.com',
           address: '123 Web Street, Սան Ֆրանցիսկո, CA 94103'
         },
         form: {

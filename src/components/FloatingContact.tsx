@@ -56,11 +56,11 @@ const FloatingContact: React.FC = () => {
                   </a>
                   
                   <a 
-                    href="mailto:contact@webstudio.com" 
+                    href="mailto:contact@coolservices.com" 
                     className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-200"
                   >
                     <Mail className="h-5 w-5 text-primary-600 dark:text-primary-500 mr-3" />
-                    <span>contact@webstudio.com</span>
+                    <span>contact@coolservices.com</span>
                   </a>
                   
                   <a 
